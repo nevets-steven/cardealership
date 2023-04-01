@@ -78,6 +78,15 @@ while switch == True:
             print(f'{index+1}: {bikes[index].make} with {bikes[index].miles} miles and a top speed of '
                     f'{bikes[index].top_speed} costs ${bikes[index].price}')
         compare(choice)
+        print('Would you like to compare your vehicles now?')
+        compare_select = input('< ').lower()
+        if compare_select == 'y':
+            for vehicle in vehicles_to_compare:
+                print(f'{vehicle.make}: with {vehicle.miles} miles costs'
+                      f' ${vehicle.price}')
+                vehicle.make_noise()
+            print("Thank you and have a nice day! <END PROGRAM>")
+            break
     elif choice == 't':
         for index, truck in enumerate(trucks):
             print(f'{index+1}: {trucks[index].make} with {trucks[index].miles} miles costs'
